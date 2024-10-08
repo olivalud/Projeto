@@ -87,7 +87,7 @@ def register():
     email = user_data['email']
     senha = user_data['senha']
     
-   
+   # teste 2
     # teste 
     try:
         connection = create_connection()
