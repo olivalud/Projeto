@@ -1,9 +1,12 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import mysql.connector
 from mysql.connector import Error
 import bcrypt
 
 app = Flask(__name__)
+CORS(app)
+CORS(app, resources={r"/*": {"origins": "http://127.0.0.1:5500"}})
 
 # Configurações de conexão
 db_config = {
@@ -73,7 +76,7 @@ def login():
 
 @app.route('/register', methods=['POST'])
 def register():
-    """Cadastra um novo usuário no sistema."""
+    """Cadastra um novo usuário no sistemas."""
     user_data = request.json
     
     # Validação de entrada
