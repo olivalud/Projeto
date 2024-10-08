@@ -76,7 +76,7 @@ def login():
 
 @app.route('/register', methods=['POST'])
 def register():
-    """Cadastra um novo usuário no sistemas."""
+    """Cadastra um novo usuário no sistema."""
     user_data = request.json
     
     # Validação de entrada
@@ -87,8 +87,9 @@ def register():
     email = user_data['email']
     senha = user_data['senha']
     
-   # teste 2
-    # teste 
+    # Hash da senha com bcrypt
+    hashed_senha = bcrypt.hashpw(senha.encode('utf-8'), bcrypt.gensalt())
+    
     try:
         connection = create_connection()
         if connection:
@@ -106,6 +107,7 @@ def register():
                 INSERT INTO Usuario (Nome, Email, Senha) 
                 VALUES (%s, %s, %s)
             """
+            cursor.execute(insert_query, (nome, email, hashed_senha))
             connection.commit()
             
             return jsonify({"message": "Usuário cadastrado com sucesso!"}), 201
