@@ -88,7 +88,7 @@ def register():
     senha = user_data['senha']
     
    
-    
+    # teste 
     try:
         connection = create_connection()
         if connection:
