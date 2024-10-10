@@ -4,6 +4,10 @@
             const email = document.getElementById('email').value;
             const senha = document.getElementById('senha').value;
 
+            console.log("Tentando login...");
+            // Verifica o elemento
+            console.log("Elemento de resposta:", document.getElementById('responseMessage'));
+
             // Chama a função para logar o usuário
             loginUser(email, senha);
         });
@@ -24,7 +28,7 @@
                 // window.location.href = 'outra_pagina.html'; // Exemplo de redirecionamento
             })
             .catch(error => {
-                let errorMsg = "Erro desconhecido, tente novamente mais tarde";
+                let errorMsg = "Erro desconhecido, tente novamente mais tarde... ";
                 if (error.response && error.response.data) {
                     errorMsg = error.response.data.message;
                 }
@@ -32,4 +36,3 @@
                 console.error("Erro no login:", error.response);
             });
         }
-  
