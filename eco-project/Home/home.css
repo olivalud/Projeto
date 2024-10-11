@@ -2,7 +2,7 @@ body {
     font-family: 'Space-Grotesk', sans-serif;
 }
 header {
-    display: flex;
+    display: absolute;
     padding: auto;
     justify-content: space-between;
     align-items: center;
@@ -16,7 +16,7 @@ header {
 }
 
 header .navbar-brand {
-    display: flex;
+    display: absolute;
     gap: 50px;
     font-size: 1.5rem;
     font-weight: bold;
@@ -30,7 +30,7 @@ header .navbar-brand img {
 }
 
 header .navbar-nav {
-    display: flex;
+    display: absolute;
     gap: 20px;
 }
 
@@ -54,4 +54,74 @@ header .navbar-nav .btn-outline-success {
     --bs-btn-border-color: #97B815;
     --bs-btn-hover-bg: #97B815;
     --bs-btn-hover-border-color:var(--bs-btn-border-color);
+}
+
+
+main {
+    padding: 40px 20px;
+}
+
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.text {
+    max-width: 50%;
+}
+
+.text h2 {
+    font-size: 48px;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.image img {
+    max-width: 400px;
+    height: auto;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 30%;
+}
+
+.card h3 {
+    color: #b1ce56;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.card a {
+    text-decoration: none;
+    color: #b1ce56;
+    font-weight: bold;
+}
+
+.card a:hover {
+    text-decoration: underline;
+
 }
