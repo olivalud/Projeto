@@ -63,6 +63,7 @@ header .navbar-nav .btn-outline-success {
 main {
     padding: 40px 20px;
     padding-top: 70px;
+    margin-top: 50px;
 }
 
 .intro {
@@ -90,6 +91,8 @@ main {
 
 .image img {
     max-width: 350px;
+    margin-right: 70px;
+    max-width: 370px;
     height: auto;
     margin-right: 100px;
 }
@@ -98,6 +101,11 @@ main {
     display: grid;
     justify-content: space-between;
     gap: 20px;
+    border: solid #c4c4c4;
+    border-radius: 20px;
+    border-bottom: #000 solid;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card {
