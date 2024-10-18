@@ -13,17 +13,48 @@ body {
 
 header {
     display: flex;
+    padding: auto;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background-color: #F9F9F9;
-    border-bottom: 2px solid #EAEAEA;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-.logo h1 {
-    font-size: 24px;
+header .navbar-brand {
+    display: flex;
+    gap: 50px;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #333333;
+    align-items: center;
+}
+
+header .navbar-brand img {
+    width: 150px;
+    height: auto;
+    margin-right: 60px;
+}
+
+header .navbar-nav {
+    display: flex;
+    gap: 20px;
+}
+
+header .navbar-nav .nav-link {
+    color: #222;
+    text-decoration: none;
+    padding: 10px;
+}
+
+header .navbar-nav .btn-outline-success {
+    width: 124px;
+    border-radius: 14px;
+    margin-left: 20px;
+    border: 1.5px solid #97B815;
 }
 
 nav ul {
