@@ -25,7 +25,7 @@
                 document.getElementById('senha').value = '';
 
                 // Aqui você pode redirecionar para outra página ou executar outra ação
-                // window.location.href = 'outra_pagina.html'; // Exemplo de redirecionamento
+                 window.location.href = 'http://127.0.0.1:5500/eco-project/Home/home.html'; 
             })
             .catch(error => {
                 let errorMsg = "Erro desconhecido, tente novamente mais tarde... ";
