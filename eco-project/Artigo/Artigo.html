@@ -3,29 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artigos</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="artigo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        </style>
+        <title>Artigos</title>
 </head>
+
 <body>
-    <header>
-        <div class="logo">
-            <h1>Eco Project</h1>
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/eco-project/Imgs/Logo.png" alt="EcoProject Logo">
+            </a>
+
+            <!--Header-->
+            <nav class="header__navigation">
+                <button class=" navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="insane collapse navbar-collapse" id="navbarNav">
+                    <ul class="itens navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/eco-project/Home/home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/eco-project/Artigo/artigo.html">Artigos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Notícias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Projetos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="loginb nav-link btn btn-outline-success" href="/eco-project/Login/login.html">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Artigos</a></li>
-                <li><a href="#">Notícias</a></li>
-                <li><a href="#">Projetos</a></li>
-                <li><a href="#" class="login-button">Login</a></li>
-            </ul>
-        </nav>
     </header>
+
 
     <main>
         <section class="intro">
             <h2>Artigos Recentes</h2>
-            <p>Acompanhe os últimos artigos sobre tecnologia sustentável e práticas ecológicas.</p>
+            <p>Acompanhe os últimos artigos sobre tecnologia sustentável e práticas ecológicas!</p>
         </section>
 
         <section class="articles">
@@ -44,11 +71,41 @@
                 <p>Mudanças climáticas impactam nos recursos naturais e nas consequências socioeconômicas.</p>
                 <a href="#">Leia mais</a>
             </article>
+            <article class="article-card">
+                <h3>Energia Sustentável</h3>
+                <p>Como a energia solar e eólica estão transformando a produção de eletricidade.</p>
+                <a href="#">Leia mais</a>
+            </article>
+            
+            <article class="article-card">
+                <h3>Desmatamento</h3>
+                <p>Impactos do desmatamento nas florestas tropicais e possíveis soluções.</p>
+                <a href="#">Leia mais</a>
+            </article>
+            
+            <article class="article-card">
+                <h3>Agricultura Sustentável</h3>
+                <p>Técnicas de agricultura sustentável que promovem o equilíbrio ambiental.</p>
+                <a href="#">Leia mais</a>
+            </article>
+            
+             <article class="article-card">
+                <h3>Poluição dos Oceanos</h3>
+                <p>A poluição por plástico nos oceanos e seus impactos nas espécies marinhas.</p>
+                <a href="#">Leia mais</a>
+            </article>
+          
+            <article class="article-card">
+                <h3>Reciclagem e Sustentabilidade</h3>
+                <p>A importância da reciclagem para reduzir o impacto ambiental e promover a sustentabilidade.</p>
+                <a href="#">Leia mais</a>
+            </article>
         </section>
     </main>
-
-    <footer>
-        <p>© 2024 Eco Project. Todos os direitos reservados.</p>
-    </footer>
 </body>
+
+<footer>
+    <p>© 2024 Eco Project. Todos os direitos reservados.</p>
+</footer>
+
 </html>

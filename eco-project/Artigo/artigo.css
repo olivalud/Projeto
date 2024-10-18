@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space-Grotesk', sans-serif;
+    color: #222;
+    text-align: center;            
+    margin-bottom: 20px;  
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    padding: auto;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header .navbar-brand {
+    display: flex;
+    gap: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    align-items: center;
+}
+
+header .navbar-brand img {
+    width: 150px;
+    height: auto;
+    margin-right: 60px;
+}
+
+header .navbar-nav {
+    display: flex;
+    gap: 20px;
+}
+
+header .navbar-nav .nav-link {
+    color: #222;
+    text-decoration: none;
+    padding: 10px;
+}
+
+header .navbar-nav .btn-outline-success {
+    width: 124px;
+    border-radius: 14px;
+    margin-left: 20px;
+    border: 1.5px solid #97B815;
+}
+
+main {
+    padding: 40px;
+    flex: 1;
+}
+
+.intro {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.intro h2 {
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    color: #333333;
+};
+
+
+.intro p {
+    font-size: 18px;
+    color: #666666;
+}
+
+.articles {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.article-card {
+    background-color: #f3f3f379;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.article-card h3 {
+    color: #B7C54C;
+    margin-bottom: 10px;
+}
+
+.article-card p {
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.article-card a {
+    color: #333333;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid #B7C54C;
+    padding-bottom: 3px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #F9F9F9;
+    margin-top: 40px;
+    color: #666666;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
