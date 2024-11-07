@@ -138,4 +138,6 @@ main h2, main p {
     text-align: center;
 }
 
-
+.card-body {
+    margin-left: 35px;
+}
