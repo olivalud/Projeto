@@ -6,6 +6,7 @@
 
 body {
     font-family: 'Space-Grotesk', sans-serif;
+    overflow: auto;
     color: #222;
     text-align: center;            
     margin-bottom: 20px;  
