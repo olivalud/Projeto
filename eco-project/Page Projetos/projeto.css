@@ -12,21 +12,46 @@ header {
     z-index: 1000;
 }
 
+header .navbar-nav {
+    display: absolute;
+    gap: 20px;
+}
+
 header .navbar-brand {
+    gap: 50px;
+    display: absolute;
     font-size: 1.5rem;
     font-weight: bold;
+    align-items: center;
+}
+
+header .navbar-brand img {
+    height: auto;
+    width: 150px;
+    margin-right: 60px;
 }
 
 header .navbar-nav .nav-link {
     color: #222;
-    text-decoration: none;
     padding: 10px;
+    text-decoration: none;
 }
 
 header .navbar-nav .btn-outline-success {
     width: 124px;
+    margin-left: 20px;
     border-radius: 14px;
     border: 1.5px solid #97B815;
+}
+
+/* botão login */
+.btn-outline-success {
+    border-radius: 40px;
+    background-color: transparent;
+    --bs-btn-color: #97B815;
+    --bs-btn-border-color: #97B815;
+    --bs-btn-hover-bg: #97B815;
+    --bs-btn-hover-border-color:var(--bs-btn-border-color);
 }
 
 main {
