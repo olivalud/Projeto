@@ -1,10 +1,12 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, session
 from flask_cors import CORS
 import mysql.connector
 from mysql.connector import Error
 import bcrypt
 
 app = Flask(__name__)
+app.secret_key = 'qCHoCA0U1IOgBOqZFCCZ9GJt3ce8aZnS'  
+
 CORS(app)
 CORS(app, resources={r"/*": {"origins": "http://127.0.0.1:5500"}})
 
@@ -39,11 +41,9 @@ def check_password(stored_password, provided_password):
     return bcrypt.checkpw(provided_password.encode('utf-8'), stored_password.encode('utf-8'))
 
 @app.route('/login', methods=['POST'])
-def login():
-    """Verifica as credenciais do usuário e retorna um token de autenticação ou mensagem de erro."""
+def user_login():
     user_data = request.get_json()
     
-    # Verifica se os campos obrigatórios estão presentes
     if not user_data or 'email' not in user_data or 'senha' not in user_data:
         return jsonify({"message": "Email e senha são obrigatórios"}), 400
     
@@ -56,11 +56,17 @@ def login():
             cursor = connection.cursor(dictionary=True)
             cursor.execute("SELECT * FROM Usuario WHERE Email = %s", (email,))
             user = cursor.fetchone()
+            print(user)  
             
-            # Adiciona mensagem de depuração
-            print(f"Usuário encontrado: {user}")
+            if user is None:
+                return jsonify({"message": "Usuário não encontrado"}), 404
             
-            if user and check_password(user['Senha'], senha):
+            # Tenta acessar 'Id_usuario' e, se não existir, tenta 'id_usuario'
+            user_id = user.get('ID_Usuario') or user.get('id_usuario')
+            
+            if bcrypt.checkpw(senha.encode('utf-8'), user['Senha'].encode('utf-8')):
+                session['user_id'] = user_id
+                session['user_name'] = user['Nome']
                 return jsonify({"message": "Login bem-sucedido!"}), 200
             else:
                 return jsonify({"message": "Credenciais inválidas"}), 401
@@ -121,39 +127,69 @@ def register():
             cursor.close()
             connection.close()
             
-@app.route('/users', methods=['GET'])
-def get_users():
-    """Retorna todos os usuários ou um usuário específico baseado no ID fornecido."""
-    user_id = request.args.get('id')
-    
+@app.route('/projeto', methods=['POST'])
+def cadastrar_projeto():
+    # Verificar se o usuário está autenticado
+    if 'user_id' not in session:
+        return jsonify({"message": "Você precisa estar autenticado para cadastrar um projeto"}), 401
+
+    # Receber os dados do projeto do cliente
+    projeto_data = request.json
+    nome = projeto_data.get('nome')
+    descricao = projeto_data.get('descricao')
+    id_categoria = projeto_data.get('id_categoria')  
+
+    # Verificar se todos os campos necessários foram fornecidos
+    if not nome or not descricao:
+        return jsonify({"message": "Nome e descrição são obrigatórios"}), 400
+
     try:
         connection = create_connection()
         if connection:
-            cursor = connection.cursor(dictionary=True)
+            cursor = connection.cursor()
             
-            if user_id:
-                # Consulta para um usuário específico
-                cursor.execute("SELECT * FROM Usuario WHERE ID = %s", (user_id,))
-            else:
-                # Consulta para todos os usuários
-                cursor.execute("SELECT * FROM Usuario")
+            # Inserir o projeto no banco de dados associado ao usuário logado
+            insert_query = """
+                INSERT INTO Projeto (Nome, Descricao, ID_Categoria, Id_usuario)
+                VALUES (%s, %s, %s, %s)
+            """
+            cursor.execute(insert_query, (nome, descricao, id_categoria, session['user_id']))
+            connection.commit()
             
-            users = cursor.fetchall()
-            
-            if users:
-                return jsonify(users), 200
-            else:
-                return jsonify({"message": "Nenhum usuário encontrado"}), 404
+            return jsonify({"message": "Projeto cadastrado com sucesso!"}), 201
         else:
             return jsonify({"message": "Erro ao conectar ao banco de dados"}), 500
     except Error as e:
-        print(f"Erro ao consultar usuários: {e}")
-        return jsonify({"message": f"Erro ao consultar usuários: {str(e)}"}), 500
+        print(f"Erro ao cadastrar projeto: {e}")
+        return jsonify({"message": "Erro ao cadastrar projeto"}), 500
     finally:
         if connection and connection.is_connected():
             cursor.close()
             connection.close()
             
+
+@app.route('/projetos', methods=['GET'])
+def listar_projetos():
+    try:
+        connection = create_connection()
+        if connection:
+            cursor = connection.cursor(dictionary=True)
             
+            # Seleciona todos os projetos no banco de dados
+            select_query = "SELECT * FROM Projeto"
+            cursor.execute(select_query)
+            projetos = cursor.fetchall()
+            
+            return jsonify(projetos), 200
+        else:
+            return jsonify({"message": "Erro ao conectar ao banco de dados"}), 500
+    except Error as e:
+        print(f"Erro ao listar projetos: {e}")
+        return jsonify({"message": "Erro ao listar projetos"}), 500
+    finally:
+        if connection and connection.is_connected():
+            cursor.close()
+            connection.close()
+
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=5000)
