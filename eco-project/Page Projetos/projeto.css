@@ -1,7 +1,9 @@
+
 body {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space-Grotesk', sans-serif;
     overflow: auto;
 }
+
 header {
     padding: 0;
     width: 100%;
@@ -48,16 +50,6 @@ header .navbar-nav .btn-outline-success {
     border: 1.5px solid #97B815;
 }
 
-/* botão login */
-.btn-outline-success {
-    border-radius: 40px;
-    background-color: transparent;
-    --bs-btn-color: #97B815;
-    --bs-btn-border-color: #97B815;
-    --bs-btn-hover-bg: #97B815;
-    --bs-btn-hover-border-color:var(--bs-btn-border-color);
-}
-
 main {
     padding: 40px 50px;
     padding-top: 80px; 
@@ -67,6 +59,7 @@ main {
 }
 
 .intro {
+    font-family: 'Space Grotesk', sans-serif;
     margin-bottom: 40px;
     text-align: center;
 }
@@ -76,47 +69,77 @@ main {
     color: #000;
 }
 
-.cards {
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
 .card {
-    background-color: #F3F3F3;
-    padding: 20px;
-    border-radius: 40px;
-    border: 1px solid black;
-    border-bottom: 6px solid black;
-    flex: 1;
-    max-width: 300px; 
+    
+    border: none;
+    border-radius: 10px;
+    background-color: #f3f3f379;
+    font-family: 'Space Grotesk', sans-serif;
+    box-shadow: 0 4px 6px rgba( 0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.card-body {
+    background-color: #f3f3f379;
+}
+.card:hover {
+    transform: scale(1.03);
 }
 
-.card h3 {
-    color: #b1ce56;
-    font-size: 22px;
-    margin-bottom: 15px;
+.card-img-top {
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
-.card p {
-    font-size: 15px;
-    margin-bottom: 10px;
+.card h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #97B815;
+}
+
+.card-text {
+    font-family: 'Space Grotesk' sans-serif;
+    color: #555;
 }
 
 .card a {
+    color: #333333;
     text-decoration: none;
-    color: #b1ce56;
     font-weight: bold;
+    border-bottom: 2px solid #B7C54C;
+    padding-bottom: 3px;
 }
 
-.card a:hover {
-    text-decoration: underline;
+
+.btn-success:hover {
+    background-color: #74b72e;
+    color: #fff;
 }
 
 .button-container {
     display: flex;
-    margin-top: 20px;
+    margin-top: 65px;
     justify-content: center;
 }
 
+.button-container .btn-success {
+
+    border-radius: 40px;
+    background-color: transparent;
+    --bs-btn-color: #97B815;
+    --bs-btn-border-color: #97B815;
+    --bs-btn-hover-bg: #97B815;
+    --bs-btn-hover-border-color: var(--bs-btn-border-color);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #F9F9F9;
+    margin-top: 40px;
+    color: #666666;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}

@@ -10,8 +10,9 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     registerUser(email,senha);
 });
 
-function registerUser(email,senha) {
+function registerUser(nome,email,senha) {
   axios.post('http://127.0.0.1:5000/register', {
+    nome: nome,
     email: email,
     senha: senha
   })

@@ -1,5 +1,5 @@
 body {
-    font-family: 'Space-Grotesk', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     overflow: auto;
 }
 header {
@@ -58,23 +58,26 @@ header .navbar-nav .btn-outline-success {
     --bs-btn-hover-border-color:var(--bs-btn-border-color);
 }
 
-
 main {
     padding: 40px 50px;
     padding-top: 80px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .intro {
     margin-bottom: 40px;
+    text-align: center;
 }
 
 .intro h2 {
-    font-family: 'Space Grotesk', sans-serif;
     font-size: 40px;
     color: #000;
 }
 
 .cards {
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -87,7 +90,7 @@ main {
     border: 1px solid black;
     border-bottom: 6px solid black;
     flex: 1;
-    max-width: 300px;
+    max-width: 300px; 
 }
 
 .card h3 {
@@ -109,5 +112,11 @@ main {
 
 .card a:hover {
     text-decoration: underline;
+}
+
+.button-container {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
 }
 

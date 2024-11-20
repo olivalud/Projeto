@@ -1,78 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repositório - EcoProject</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
-    </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="projeto.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="projeto.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+ <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+  </style>
+
+  <title>Repositório de Projetos</title>
 </head>
 
 <body>
-    <header>
-        <header class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="logo navbar-brand" href="../Home/home.html">
-                    <img src="../Imgs/Logo.png" alt="Eco Project Logo">
-                </a>
-                <nav class="header__navigation">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="insane collapse navbar-collapse" id="navbarNav">
-                        <ul class="itens navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="../Home/home.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="../Artigo/artigo.html">Artigos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="../Noticias/noticia.html">Notícias</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="../Page Projetos/projeto.html">Projetos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="loginb nav-link btn btn-outline-success" href="../Login/login.html">Login</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </header>
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="logo navbar-brand" href="../Home/home.html">
+           <img src="../Imgs/Logo.png" alt="Eco Project">
+        </a>
+      <nav class="header__navigation">
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="insane collapse navbar-collapse" id="navbarNav">
+        <ul class="itens navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../Home/home.html">Home</a>
+          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Artigo/artigo.html">Artigos</a>
+          </li>
+            <li class="nav-item">
+               <a class="nav-link" href="../Page Projetos/projeto.html">Projetos</a>
+            </li>
+           <li class="nav-item">
+               <a class="nav-link" href="../Cadastro_Projeto/cad-projeto.html">Faça Parte</a>
+             </li>
+            <li class="nav-item">
+                 <a class="loginb nav-link btn btn-outline-success" href="../Login/login.html">Login</a>
+            </li>
+          </ul>
+         </div>
+       </nav>
+      </div>
     </header>
 
-    <main>
-        <div class="intro">
-            <h2>Repositório de Projetos</h2>
+  <main>
+  <div class="container">
+    
+  <div class="intro">
+      <h2>Repositório de Projetos</h2>
+  </div>
+  
+
+    <div class="row justify-content-center">
+
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="../Imgs/Projeto1.jpeg" class="card-img-top" alt="Imagem do Projeto 1">
+          <div class="card-body text-center">
+            <h5 class="card-title">Sítio Galeria</h5>
+            <p class="card-text">o Sítio Galeria trabalha com os princípios de Permacultura e práticas agroflorestais com o objetivo de reflorestar a sua área. Procuram voluntários dispostos a colaborar com cuidado com animais, manutenção dos jardins e hortas. </p>
+            <a href="https://www.worldpackers.com/pt-BR/locations/sitio-galeria-pirenopolis" class="text-decoration-none"> Faça Parte! </a>
+          </div>
         </div>
+      </div>
 
-        <section class="cards">
-            <div class="card">
-                <h3>Projeto 1</h3>
-                <p>Descrição breve do Projeto 1.</p>
-                <a href="#">Leia mais &rarr;</a>
-            </div>
-            <div class="card">
-                <h3>Projeto 2</h3>
-                <p>Descrição breve do Projeto 2.</p>
-                <a href="#">Leia mais &rarr;</a>
-            </div>
-            <div class="card">
-                <h3>Projeto 3</h3>
-                <p>Descrição breve do Projeto 3.</p>
-                <a href="#">Leia mais &rarr;</a>
-            </div>
-        </section>
-
-        <div class="button-container">
-            <button class="btn btn-outline-success">Cadastre Seu Projeto!</button>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="../Imgs/Projeto2.jpg" class="card-img-top" alt="Imagem do Projeto 2">
+          <div class="card-body text-center">
+            <h5 class="card-title">Beach Clean UP</h5>
+            <p class="card-text">O foco principal da iniciativa é recolher o lixo das praias. Outro objetivo é conscientizar a população a assumir nosso papel como responsáveis pelo impacto que causamos no mundo.</p>
+            <a href="https://www.worldpackers.com/pt-BR/articles/o-que-e-beach-clean-up" class="text-decoration-none"> Faça Parte! </a>
+          </div>
         </div>
+      </div>
 
-    </main>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="../Imgs/Projeto3.jpeg" class="card-img-top" alt="Imagem do Projeto 3">
+          <div class="card-body text-center">
+            <h5 class="card-title">NeoRural</h5>
+            <p class="card-text"> o Sítio NeoRural tem como proposta vivenciar a vida no campo de forma mais adaptada às pessoas que vivem na cidade. Ou seja, plantio, processamento de alimentos, tratamento de animais, etc.</p>
+            <a href="https://www.worldpackers.com/pt-BR/locations/neo-rural-permacultura?locale=pt-BR" class="text-decoration-none"> Faça Parte! </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <section class="button-container">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuDFHen0sB9OgtRr7SAZAjRTRo0vO0v3-im-W-KkT_r8iWhg/viewform?usp=sf_link" class="btn btn-success">Cadastre Seu Projeto!</a>
+    </section>
+  </main>
+
 </body>
+<footer>
+  <p>© 2024 Eco Project. Todos os direitos reservados.</p>
+</footer>
 </html>
