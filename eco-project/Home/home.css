@@ -2,24 +2,25 @@ body {
     background-color: #f9f9f9;
     overflow: auto;
     margin: 40px;
+    
 }
 
 header {
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 0px;
-    z-index: 1000;
-    position: fixed;
-    display: absolute;
+    display: flex;
+    padding: auto;
+    justify-content: space-between;
     align-items: center;
     background-color: #fff;
-    justify-content: space-between;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 header .navbar-brand {
-    display: absolute;
+    display: flex;
     gap: 50px;
     font-size: 1.5rem;
     font-weight: bold;
@@ -27,13 +28,13 @@ header .navbar-brand {
 }
 
 header .navbar-brand img {
-    height: auto;
     width: 150px;
+    height: auto;
     margin-right: 60px;
 }
 
 header .navbar-nav {
-    display: absolute;
+    display: flex;
     gap: 20px;
 }
 
