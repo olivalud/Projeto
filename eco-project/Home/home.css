@@ -1,8 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: #f9f9f9;
     overflow: auto;
-    margin: 40px;
-    
+    color: #222;
+    text-align: center;            
+    margin-bottom: 20px;  
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {

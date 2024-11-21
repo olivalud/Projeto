@@ -51,8 +51,8 @@ header .navbar-nav {
 
 header .navbar-nav .nav-link {
     color: #222;
-    padding: 10px;
     text-decoration: none;
+    padding: 10px;
 }
 
 header .navbar-nav .btn-outline-success {

@@ -6,36 +6,36 @@ body {
 }
 
 header {
-    padding: 0;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
     display: flex;
+    padding: auto;
+    justify-content: space-between;
+    align-items: center;
     background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
+    left: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-header .navbar-nav {
-    display: absolute;
-    gap: 20px;
 }
 
 header .navbar-brand {
+    display: flex;
     gap: 50px;
-    display: absolute;
     font-size: 1.5rem;
     font-weight: bold;
     align-items: center;
 }
 
 header .navbar-brand img {
-    height: auto;
     width: 150px;
+    height: auto;
     margin-right: 60px;
+}
+
+header .navbar-nav {
+    display: flex;
+    gap: 20px;
 }
 
 header .navbar-nav .nav-link {
@@ -46,8 +46,8 @@ header .navbar-nav .nav-link {
 
 header .navbar-nav .btn-outline-success {
     width: 124px;
-    margin-left: 20px;
     border-radius: 14px;
+    margin-left: 20px;
     border: 1.5px solid #97B815;
 }
 
