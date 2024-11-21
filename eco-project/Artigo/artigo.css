@@ -16,52 +16,6 @@ body {
     min-height: 100vh;
 }
 
-header {
-    display: flex;
-    padding: auto;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-header .navbar-brand {
-    display: flex;
-    gap: 50px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    align-items: center;
-}
-
-header .navbar-brand img {
-    width: 150px;
-    height: auto;
-    margin-right: 60px;
-}
-
-header .navbar-nav {
-    display: flex;
-    gap: 20px;
-}
-
-header .navbar-nav .nav-link {
-    color: #222;
-    text-decoration: none;
-    padding: 10px;
-}
-
-header .navbar-nav .btn-outline-success {
-    width: 124px;
-    border-radius: 14px;
-    margin-left: 20px;
-    border: 1.5px solid #97B815;
-}
-
 main {
     padding: 40px;
     flex: 1;
@@ -106,7 +60,7 @@ main {
 }
 
 .article-card h3 {
-    color: #B7C54C;
+    color: #226133;
     margin-bottom: 10px;
 }
 
@@ -116,10 +70,10 @@ main {
 }
 
 .article-card a {
-    color: #333333;
+    color: #226133;
     text-decoration: none;
     font-weight: bold;
-    border-bottom: 2px solid #B7C54C;
+    border-bottom: 1px solid #226133;
     padding-bottom: 3px;
 }
 
