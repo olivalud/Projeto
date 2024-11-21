@@ -5,6 +5,7 @@
 }
 
 body {
+    background-color: #f9f9f9;
     font-family: 'Space Grotesk', sans-serif;
     overflow: auto;
     color: #222;

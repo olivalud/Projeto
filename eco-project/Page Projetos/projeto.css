@@ -2,6 +2,7 @@
 body {
     font-family: 'Space-Grotesk', sans-serif;
     overflow: auto;
+    background-color: #f9f9f9;
 }
 
 header {
