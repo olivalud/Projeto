@@ -47,70 +47,56 @@
         </header>
     </header>
 
-    <main>
-        <section class="intro">
-            <h2>Cadastro de Projeto</h2>
-            <form>
-                <div class="mb-3">
-                    <label for="nomeProjeto" class="form-label">Nome do Projeto</label>
-                    <input type="text" class="form-control" id="nomeProjeto" required>
+    <section class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="row align-items-center">
+
+            <!-- Sign up Form -->
+            <div class=" box col-md-6">
+                <div class="card p-4 shadow">
+                    <h3 class="text-center mb-4">Cadastro de Projetos</h3>
+                    
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="nome" class="form-label">Nome do Projeto</label>
+                            <input type="nome" class="form-control id="nome" placeholder="Insira o nome do projeto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Insira seu email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="id_categoria" class="form-label">ID da Categoria</label>
+                            <select id="id_categoria" name="id_categoria" required>
+                                <option value="">Selecione uma categoria</option>
+                                <option value="1">Categoria 1</option>
+                                <option value="2">Categoria 2</option>
+                                <option value="3">Categoria 3</option>
+                            </select>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="descrição" class="form-label">Descrição do projeto</label>
+                            <input type="descrição" class="form-control" id="descrição" placeholder="Insira a descrição do projeto" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="termosCheck" required>
+                            <label class="form-check-label" for="termosCheck">
+                                Concorde com nossos <a href="#">Termos de uso</a> e <a href="#">Política de privacidade</a>
+                            </label>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">Cadastrar Projeto</button>
+                        </div>
+                    </form>
+
+                    <div id="responseMessage"></div>
+
                 </div>
-                <div class="mb-3">
-                    <label for="descricao" class="form-label">Descrição</label>
-                    <textarea class="form-control" id="descricao" rows="3" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-outline-success">Cadastre Seu Projeto!</button>
-            </form>
-        </section>
-    </main>
+            </div>
+        </div>
+    </section>
+
+    <script src="cad.js"></script> <!-- linkar script -->
 </body>
 </html>
-
-<!-- 
- <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #ffffff;
-    }
-    .title {
-      text-align: center;
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin: 20px 0;
-    }
-    .card {
-      border-radius: 15px;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      border: none;
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: scale(1.02);
-    }
-    .card-img-top {
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
-      height: 180px;
-      object-fit: cover;
-    }
-    .card-title {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #74b72e;
-    }
-    .card-text {
-      color: #555;
-    }
-    .btn-custom {
-      color: #74b72e;
-      border: 2px solid #74b72e;
-      font-weight: bold;
-      border-radius: 25px;
-      padding: 10px 20px;
-      text-decoration: none;
-    }
-    .btn-custom:hover {
-      background-color: #74b72e;
-      color: #fff;
-    }
-    -->
