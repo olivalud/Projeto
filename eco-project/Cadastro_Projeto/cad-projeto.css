@@ -48,7 +48,7 @@ header .navbar-nav .btn-outline-success {
     width: 124px;
     border-radius: 14px;
     margin-left: 20px;
-    border: 1.5px solid #97B815;
+    border: 1.5px solid #226133;
 }
 
 .main-content {
@@ -60,7 +60,7 @@ header .navbar-nav .btn-outline-success {
 
 .card {
     font-family: 'Space Grotesk', sans-serif;
-    border: 1px solid #97B815;
+    border: 1px solid #226133;
     background-color: white;
     padding: 40px;
     border-radius: 24px;
@@ -72,10 +72,12 @@ header .navbar-nav .btn-outline-success {
 .form-label {
     padding: 5px;
 }
+
 .form-control {
     border-radius: 12px;
     padding: 12px;
 }
+
 .btn-eye {
     position: absolute;
     top: 50%;
@@ -88,22 +90,22 @@ header .navbar-nav .btn-outline-success {
 
 .btn-success {
     color: white;
-    background-color: #97B815;
-    border-color: #5cb85c;
+    background-color: #226133;
+    border-color: #226133;
     border-radius: 40px;
     font-weight: bold;
-        --bs-btn-color: #97B815;
-    --bs-btn-border-color: #97B815;
-    --bs-btn-hover-bg: #97B815;
+        --bs-btn-color: #226133;
+    --bs-btn-border-color: #226133;
+    --bs-btn-hover-bg: #477954;
     --bs-btn-hover-border-color:var(--bs-btn-border-color);
 }
 
 .btn-outline-success {
     border-radius: 40px;
     background-color: transparent;
-    --bs-btn-color: #97B815;
-    --bs-btn-border-color: #97B815;
-    --bs-btn-hover-bg: #97B815;
+    --bs-btn-color: #226133;
+    --bs-btn-border-color: #226133;
+    --bs-btn-hover-bg: #226133;
     --bs-btn-hover-border-color:var(--bs-btn-border-color);
 }
 
@@ -111,8 +113,9 @@ header .navbar-nav .btn-outline-success {
     margin: 0 auto;
 }
 
+
 h3 {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     color: #222;
     text-align: center;            
     margin-bottom: 20px;          

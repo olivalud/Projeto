@@ -52,7 +52,7 @@ body {
     font-weight: bold;
     --bs-btn-color: #226133;
     --bs-btn-border-color: #226133;
-    --bs-btn-hover-bg: #3e9756;
+    --bs-btn-hover-bg: #;
     --bs-btn-hover-border-color:var(--bs-btn-border-color);
 }
 
@@ -61,7 +61,7 @@ body {
     background-color: transparent;
     --bs-btn-color: #226133;
     --bs-btn-border-color: #226133;
-    --bs-btn-hover-bg: #3e9756;
+    --bs-btn-hover-bg: #226133;
     --bs-btn-hover-border-color:var(--bs-btn-border-color);
 }
 
