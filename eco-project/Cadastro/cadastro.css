@@ -1,5 +1,6 @@
 body {
     font-family: 'Space Grotesk', sans-serif;
+    background-color: #f9f9f9;
     color: #222;
     text-align: center;            
     margin-bottom: 20px;        
@@ -66,6 +67,10 @@ header .navbar-nav .btn-outline-success {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
     width: 400px; 
     text-align: left;
+}
+
+.card h3 {
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 .form-label {
