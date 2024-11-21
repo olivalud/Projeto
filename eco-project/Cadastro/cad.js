@@ -1,13 +1,14 @@
 document.getElementById('registerForm').addEventListener('submit', async function(event) {
     event.preventDefault();
-
+    
+    const nome = document.getElementById('email').value;
     const email = document.getElementById('email').value;
     const senha = document.getElementById('senha').value;
 
     // Verifica o elemento
     console.log("Elemento de resposta:", document.getElementById('responseMessage'));
 
-    registerUser(email,senha);
+    registerUser(nome,email,senha);
 });
 
 function registerUser(nome,email,senha) {
@@ -21,7 +22,7 @@ function registerUser(nome,email,senha) {
     document.getElementById('responseMessage').innerHTML = `<p style = "color:green">${response.data.message}</p>`;
     console.log("Cadastro realizado com sucesso!!", response.data);
 
-    document.getElementById('senha').value = '';
+     document.getElementById('senha').value = '';
   })
 
   .catch(error => {
