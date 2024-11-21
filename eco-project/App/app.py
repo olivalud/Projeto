@@ -12,7 +12,6 @@ CORS(app, resources={r"/*": {"origins": "http://127.0.0.1:5500", "supports_crede
 app.config['SESSION_COOKIE_SAMESITE'] = 'None'
 app.config['SESSION_COOKIE_SECURE'] = False  
 
-# Configurações de conexão
 db_config = {
     'host': 'mysql-d30b100-gustavocnc.d.aivencloud.com',
     'user': 'avnadmin',
@@ -22,7 +21,6 @@ db_config = {
 }
 
 def create_connection():
-    """Estabelece a conexão com o banco de dados e retorna a conexão."""
     try:
         connection = mysql.connector.connect(
             host=db_config['host'],
@@ -88,7 +86,6 @@ def register():
     """Cadastra um novo usuário no sistema."""
     user_data = request.json
     
-    # Validação de entrada
     if not user_data or not user_data.get('nome') or not user_data.get('email') or not user_data.get('senha'):
         return jsonify({"message": "Nome, email e senha são obrigatórios"}), 400
     
@@ -111,7 +108,6 @@ def register():
             if user:
                 return jsonify({"message": "Usuário já existe com esse email"}), 409
             
-            # Insere o novo usuário no banco de dados
             insert_query = """
                 INSERT INTO Usuario (Nome, Email, Senha) 
                 VALUES (%s, %s, %s)
@@ -149,7 +145,6 @@ def create_project():
         if connection:
             cursor = connection.cursor()
             
-            # Insere o novo projeto no banco de dados
             insert_query = """
                 INSERT INTO Projeto (Nome, Descricao, ID_Categoria) 
                 VALUES (%s, %s, %s)
