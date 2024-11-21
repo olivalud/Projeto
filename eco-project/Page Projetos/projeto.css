@@ -65,15 +65,21 @@ main {
     text-align: center;
 }
 
+.intro p {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    color: #666666;
+}
+
 .intro h2 {
+    font-weight: bold;
     font-size: 40px;
     color: #000;
 }
 
 .card {
-    
     border: none;
-    border-radius: 10px;
+    border-radius: 40px;
     background-color: #f3f3f379;
     font-family: 'Space Grotesk', sans-serif;
     box-shadow: 0 4px 6px rgba( 0, 0, 0, 0.1);
@@ -96,7 +102,7 @@ main {
 .card h5 {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #97B815;
+    color: #226133;
 }
 
 .card-text {
@@ -128,9 +134,9 @@ main {
 
     border-radius: 40px;
     background-color: transparent;
-    --bs-btn-color: #97B815;
-    --bs-btn-border-color: #97B815;
-    --bs-btn-hover-bg: #97B815;
+    --bs-btn-color: #226133;
+    --bs-btn-border-color: #226133;
+    --bs-btn-hover-bg: #226133;
     --bs-btn-hover-border-color: var(--bs-btn-border-color);
 }
 
