@@ -8,7 +8,9 @@ app = Flask(__name__)
 app.secret_key = 'qCHoCA0U1IOgBOqZFCCZ9GJt3ce8aZnS'  
 
 CORS(app)
-CORS(app, resources={r"/*": {"origins": "http://127.0.0.1:5500"}})
+CORS(app, resources={r"/*": {"origins": "http://127.0.0.1:5500", "supports_credentials": True}})
+app.config['SESSION_COOKIE_SAMESITE'] = 'None'
+app.config['SESSION_COOKIE_SECURE'] = False  
 
 # Configurações de conexão
 db_config = {
@@ -56,17 +58,18 @@ def user_login():
             cursor = connection.cursor(dictionary=True)
             cursor.execute("SELECT * FROM Usuario WHERE Email = %s", (email,))
             user = cursor.fetchone()
-            print(user)  
+            print(user)  # Verifique se o usuário foi encontrado
             
             if user is None:
                 return jsonify({"message": "Usuário não encontrado"}), 404
             
-            # Tenta acessar 'Id_usuario' e, se não existir, tenta 'id_usuario'
+            # Tenta acessar 'ID_Usuario' e, se não existir, tenta 'id_usuario'
             user_id = user.get('ID_Usuario') or user.get('id_usuario')
             
             if bcrypt.checkpw(senha.encode('utf-8'), user['Senha'].encode('utf-8')):
                 session['user_id'] = user_id
                 session['user_name'] = user['Nome']
+                print("Sessão criada após login:", session)  # Verifique a sessão aqui
                 return jsonify({"message": "Login bem-sucedido!"}), 200
             else:
                 return jsonify({"message": "Credenciais inválidas"}), 401
@@ -128,32 +131,30 @@ def register():
             connection.close()
             
 @app.route('/projeto', methods=['POST'])
-def cadastrar_projeto():
-    # Verificar se o usuário está autenticado
-    if 'user_id' not in session:
-        return jsonify({"message": "Você precisa estar autenticado para cadastrar um projeto"}), 401
+def create_project():
+    """Cadastra um novo projeto no sistema."""
+    project_data = request.json
+    
+    # Validação de entrada
+    if not project_data or not project_data.get('nome') or not project_data.get('descricao') or not project_data.get('id_categoria'):
+        return jsonify({"message": "Nome, descrição e ID da categoria são obrigatórios"}), 400
 
-    # Receber os dados do projeto do cliente
-    projeto_data = request.json
-    nome = projeto_data.get('nome')
-    descricao = projeto_data.get('descricao')
-    id_categoria = projeto_data.get('id_categoria')  
-
-    # Verificar se todos os campos necessários foram fornecidos
-    if not nome or not descricao:
-        return jsonify({"message": "Nome e descrição são obrigatórios"}), 400
-
+    
+    nome = project_data['nome']
+    descricao = project_data['descricao']
+    id_categoria = project_data['id_categoria']
+    
     try:
         connection = create_connection()
         if connection:
             cursor = connection.cursor()
             
-            # Inserir o projeto no banco de dados associado ao usuário logado
+            # Insere o novo projeto no banco de dados
             insert_query = """
-                INSERT INTO Projeto (Nome, Descricao, ID_Categoria, Id_usuario)
-                VALUES (%s, %s, %s, %s)
+                INSERT INTO Projeto (Nome, Descricao, ID_Categoria) 
+                VALUES (%s, %s, %s)
             """
-            cursor.execute(insert_query, (nome, descricao, id_categoria, session['user_id']))
+            cursor.execute(insert_query, (nome, descricao, id_categoria))
             connection.commit()
             
             return jsonify({"message": "Projeto cadastrado com sucesso!"}), 201
@@ -165,8 +166,7 @@ def cadastrar_projeto():
     finally:
         if connection and connection.is_connected():
             cursor.close()
-            connection.close()
-            
+            connection.close()               
 
 @app.route('/projetos', methods=['GET'])
 def listar_projetos():
