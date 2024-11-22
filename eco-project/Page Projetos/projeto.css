@@ -85,12 +85,14 @@ main {
 }
 
 .button-container .btn-success {
-
+    padding: 10px;
+    font-weight: bold;
+    width: 300px;
     border-radius: 40px;
-    background-color: transparent;
-    --bs-btn-color: #226133;
+    background-color: #226133;
+    --bs-btn-color: white;
     --bs-btn-border-color: #226133;
-    --bs-btn-hover-bg: #226133;
+    --bs-btn-hover-bg: #477954;
     --bs-btn-hover-border-color: var(--bs-btn-border-color);
 }
 
